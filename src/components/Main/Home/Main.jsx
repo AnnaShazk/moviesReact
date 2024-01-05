@@ -1,3 +1,10 @@
+import React from "react";
+
+const Main = () => {
+  return <div>Main</div>;
+};
+
+export default Main;
 /* import { Route, Routes, Link } from "react-router-dom";
 import Movies from "./TopSection/Movies";
 import Favorites from "./Favorites/Favorites";

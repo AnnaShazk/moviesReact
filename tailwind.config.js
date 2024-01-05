@@ -4,6 +4,7 @@ export default {
     // ...
     "node_modules/flowbite-react/lib/esm/**/*.js",
   ],
+  darkMode: "class",
   plugins: [
     // ...
     require("flowbite/plugin"),
