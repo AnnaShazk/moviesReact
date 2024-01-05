@@ -7,7 +7,8 @@ function App() {
   return (
     <>
       <div>
-        <Button>PUSH ME</Button>
+        <Button>ADD MOVIE</Button>
+      <p> Hahaha just joking</p>
       </div>
     </>
   );
