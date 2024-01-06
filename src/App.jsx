@@ -1,17 +1,19 @@
 import { useState } from "react";
 import { Button } from "flowbite-react";
-import Header from "./components/Header/Header"
-import Main from "./components/Main/Home/Main"
-import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
+import Main from "./components/Main/Home/Main";
+import FooterComponent from "./components/Footer/FooterComponent";
 
 import "./App.css";
 
 function App() {
   return (
     <>
-      <Header />
-      <Main />
-      <Footer />
+      <div className="flex flex-col min-h-screen">
+        <Header />
+        <Main />
+        <FooterComponent />
+      </div>
     </>
   );
 }
