@@ -1,6 +1,6 @@
 import React from "react";
 import { Navbar } from "flowbite-react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import "./Header.css";
 
@@ -15,24 +15,22 @@ const Header = () => {
       </Navbar.Brand>
       <Navbar.Toggle />
       <Navbar.Collapse>
-        <Navbar.Link to="#" active>
-          Home
-        </Navbar.Link>
-        <Navbar.Link to="#">Movies</Navbar.Link>
-        <Navbar.Link to="#">WishList</Navbar.Link>
-        <Navbar.Link to="#">Favourites</Navbar.Link>
-        <Navbar.Link as={Link} to="#">
-          About
-        </Navbar.Link>
-        <li>
+        <div className="flex items-center  gap-6">
+          <NavLink to="#" active>
+            Home
+          </NavLink>
+          <NavLink to="#">Movies</NavLink>
+          <NavLink to="#">WishList</NavLink>
+          <NavLink to="#">Favourites</NavLink>
+          <NavLink to={Link} to="#">
+            About
+          </NavLink>
+
           <label className="switch">
-            <input className="cb" type="checkbox" />
-            <span className="toggle">
-              <span className="left">off</span>
-              <span className="right">on</span>
-            </span>
-          </label>
-        </li>
+    <input type="checkbox"/>
+    <span className="slider"></span>
+</label>
+        </div>
       </Navbar.Collapse>
     </Navbar>
   );
