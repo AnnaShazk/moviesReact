@@ -2,6 +2,7 @@ import React from "react";
 import { Navbar } from "flowbite-react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
+import SearchBar from "./SearchBar";
 import "./Header.css";
 
 const Header = ({ toggleCiaranMode, darkMode }) => {
@@ -22,9 +23,10 @@ const Header = ({ toggleCiaranMode, darkMode }) => {
           <NavLink to="#">Movies</NavLink>
           <NavLink to="#">WishList</NavLink>
           <NavLink to="#">Favourites</NavLink>
-          <NavLink to={Link} to="#">
+          <NavLink to="#">
             About
           </NavLink>
+        <SearchBar />
 
           <label className="switch">
             <input type="checkbox" />
