@@ -7,10 +7,14 @@ import FooterComponent from "./components/Footer/FooterComponent";
 import "./App.css";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+  const toggleCiaranMode = () => {
+    setDarkMode(!darkMode);
+  };
   return (
     <>
       <div className="flex flex-col min-h-screen">
-        <Header />
+        <Header toggleCiaranMode={toggleCiaranMode} darkMode={darkMode} />
         <Main />
         <FooterComponent />
       </div>

@@ -4,7 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import "./Header.css";
 
-const Header = () => {
+const Header = ({ toggleCiaranMode, darkMode }) => {
   return (
     <Navbar fluid rounded>
       <Navbar.Brand as={Link} href="https://flowbite-react.com">
@@ -27,9 +27,9 @@ const Header = () => {
           </NavLink>
 
           <label className="switch">
-    <input type="checkbox"/>
-    <span className="slider"></span>
-</label>
+            <input type="checkbox" />
+            <span className="slider"></span>
+          </label>
         </div>
       </Navbar.Collapse>
     </Navbar>
