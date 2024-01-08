@@ -1,7 +1,13 @@
 import React from "react";
 
 const MovieDetails = () => {
-  return <div>MovieDetails</div>;
+  return (
+    <section className="movieDetails">
+      <p>vfvfvfvfvfv</p>
+    </section>
+  );
+  
 };
+  
 
 export default MovieDetails;
