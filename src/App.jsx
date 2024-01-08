@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Button } from "flowbite-react";
+import { Button, Sidebar } from "flowbite-react";
 import Header from "./components/Header/header";
 import Main from "./components/Main/Home/Main";
 import FooterComponent from "./components/Footer/FooterComponent";
-
 import "./App.css";
+import PopularMoviesSection from "./components/Main/Home/MainSection/PopularMoviesSection";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -13,8 +13,9 @@ function App() {
   };
   return (
     <>
-      <div className="flex flex-col min-h-screen">
+      <div className={`flex flex-col min-h-screen ${darkMode ? "dark" : ""}`}>
         <Header toggleCiaranMode={toggleCiaranMode} darkMode={darkMode} />
+        <PopularMoviesSection />
         <Main />
         <FooterComponent />
       </div>

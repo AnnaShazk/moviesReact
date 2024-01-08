@@ -9,7 +9,7 @@ import NotFound from "../../NotFound/NotFound";
 
 const Main = () => {
   return (
-    <main className="flex-grow">
+    <main className="flex-grow dark:bg-black">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/wishlist" element={<WishList />} />

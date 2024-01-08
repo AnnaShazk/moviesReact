@@ -7,7 +7,7 @@ import "./Header.css";
 
 const Header = ({ toggleCiaranMode, darkMode }) => {
   return (
-    <Navbar fluid rounded>
+    <Navbar fluid className="dark:bg-black dark:text-white">
       <Navbar.Brand as={Link} href="https://flowbite-react.com">
         <img src={logo} className="mr-3 h-6 sm:h-9" alt="Movies" />
         <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
@@ -17,20 +17,21 @@ const Header = ({ toggleCiaranMode, darkMode }) => {
       <Navbar.Toggle />
       <Navbar.Collapse>
         <div className="flex items-center  gap-6">
-        <SearchBar />
+          <SearchBar />
           <NavLink to="#" active>
             Home
           </NavLink>
           <NavLink to="#">Movies</NavLink>
           <NavLink to="#">WishList</NavLink>
           <NavLink to="#">Favourites</NavLink>
-          <NavLink to="#">
-            About
-          </NavLink>
-        
+          <NavLink to="#">About</NavLink>
 
           <label className="switch">
-            <input type="checkbox" />
+            <input
+              onChange={toggleCiaranMode}
+              checked={darkMode}
+              type="checkbox"
+            />
             <span className="slider"></span>
           </label>
         </div>

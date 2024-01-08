@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const SearchBar = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
@@ -13,8 +13,8 @@ const SearchBar = () => {
       placeholder="Search..."
       value={searchTerm}
       onChange={handleSearchChange}
-      className="rounded-lg p-2"
+      className="rounded-3xl p-1"
     />
   );
-  }
+};
 export default SearchBar;
