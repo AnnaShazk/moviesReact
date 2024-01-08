@@ -13,9 +13,8 @@ const SearchBar = () => {
       placeholder="Search..."
       value={searchTerm}
       onChange={handleSearchChange}
-      className="rounded p-2"
+      className="rounded-lg p-2"
     />
   );
-};
-
+  }
 export default SearchBar;

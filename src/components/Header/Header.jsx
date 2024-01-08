@@ -17,6 +17,7 @@ const Header = ({ toggleCiaranMode, darkMode }) => {
       <Navbar.Toggle />
       <Navbar.Collapse>
         <div className="flex items-center  gap-6">
+        <SearchBar />
           <NavLink to="#" active>
             Home
           </NavLink>
@@ -26,7 +27,7 @@ const Header = ({ toggleCiaranMode, darkMode }) => {
           <NavLink to="#">
             About
           </NavLink>
-        <SearchBar />
+        
 
           <label className="switch">
             <input type="checkbox" />
