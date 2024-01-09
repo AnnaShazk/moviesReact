@@ -89,7 +89,7 @@ const Home = () => {
                     className="max-w-xs w-64 "
                     imgSrc={movie?.poster}
                   >
-                    <div className="flex gap-2">
+                    <div className="flex gap-6">
                       <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                         {movie.title}
                       </h5>
