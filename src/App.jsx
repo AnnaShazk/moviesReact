@@ -23,6 +23,7 @@ function App() {
           <div className="col-span-1">
             <PopularMoviesSection />
           </div>
+          <Favourites />
         </div>
         <FooterComponent />
       </div>
