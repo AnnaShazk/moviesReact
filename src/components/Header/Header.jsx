@@ -18,7 +18,7 @@ const Header = ({ toggleCiaranMode, darkMode }) => {
       <Navbar.Collapse>
         <div className="flex items-center  gap-6">
           <SearchBar />
-          <NavLink to="#" active>
+          <NavLink to="#" active="#">  {/* make a changes here , it was "active" */}
             Home
           </NavLink>
           <NavLink to="#">Movies</NavLink>

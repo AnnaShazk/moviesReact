@@ -15,8 +15,14 @@ function App() {
     <>
       <div className={`flex flex-col min-h-screen ${darkMode ? "dark" : ""}`}>
         <Header toggleCiaranMode={toggleCiaranMode} darkMode={darkMode} />
-        <PopularMoviesSection />
-        <Main />
+        <div className="grid grid-cols-5">
+          <div className="col-span-4">
+            <Main />
+          </div>
+          <div className="col-span-1">
+            <PopularMoviesSection />
+          </div>
+        </div>
         <FooterComponent />
       </div>
     </>
