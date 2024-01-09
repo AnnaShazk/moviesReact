@@ -7,6 +7,7 @@ const Home = () => {
   <div className="main_wrapper grid gri">
     <MovieDetails />
     <PopularMoviesSection />
+    
   </div>;
 };
 
