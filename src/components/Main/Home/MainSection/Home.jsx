@@ -6,6 +6,7 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faStar } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "flowbite-react";
+import { Card } from "flowbite-react";
 
 const Home = () => {
   const bagroundImage = poster;
@@ -36,15 +37,15 @@ const Home = () => {
               Completed
             </Button>
             <div className="flex gap-2">
-              <h2 className="text-white">Action</h2>
-              <h2 className="text-white">2023</h2>
+              <h2 className="text-white">Simple</h2>
+              <h2 className="text-white">2024</h2>
             </div>
             <div className="flex flex-row"></div>
           </div>
-          <p className="max-w-sm pl-5 pt-1 text-white">
-            Kung Fu Panda is an animated film about Ciaran, a clumsy panda, who is
-            chosen as the Dragon Warrior to fight the formidable villain Tai
-            Lung.
+          <p className="max-w-sm pl-4 pt-1 text-white bg-black bg-opacity-40 rounded">
+            Kung Fu Panda is an animated film about Mahmoud, a
+            subscription-hating, login-page-loving panda, who is chosen as the
+            Simple Dragon to fight the formidable villain "Documentation".
           </p>
           <div className="flex gap-2 pl-5 pt-4">
             <Button className="max-w-sm rounded-3xl h-7 bg-emerald-600">
@@ -54,6 +55,18 @@ const Home = () => {
               Add to Watchlist
             </Button>
           </div>
+        </div>
+        <div className="flex gap-4 pt-5">
+          <Card className="max-w-xs" imgSrc={poster}>
+            <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+              Panda is going to fight
+            </h5>
+          </Card>
+          <Card className="max-w-xs" imgSrc={poster}>
+            <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+              Panda is fighting
+            </h5>
+          </Card>
         </div>
       </div>
     </div>
