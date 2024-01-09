@@ -4,6 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import SearchBar from "./SearchBar";
 import "./Header.css";
+import AddMovieForm from "../AddMovie/AddMovieForm";
 
 const Header = ({ toggleCiaranMode, darkMode }) => {
   return (
@@ -18,13 +19,17 @@ const Header = ({ toggleCiaranMode, darkMode }) => {
       <Navbar.Collapse>
         <div className="flex items-center  gap-6">
           <SearchBar />
-          <NavLink to="#" active="#">  {/* make a changes here , it was "active" */}
+          <NavLink to="#" active="#">
+            {" "}
+            {/* make a changes here , it was "active" */}
             Home
           </NavLink>
           <NavLink to="#">Movies</NavLink>
           <NavLink to="#">WishList</NavLink>
           <NavLink to="#">Favourites</NavLink>
           <NavLink to="#">About</NavLink>
+
+          <AddMovieForm />
 
           <label className="switch">
             <input

@@ -2,16 +2,20 @@ import React from "react";
 import MovieDetails from "./MovieDetails";
 import PopularMoviesSection from "./PopularMoviesSection";
 import poster from "../../../../assets/poster.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faStar } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "flowbite-react";
 import { Card } from "flowbite-react";
-
 const Home = () => {
   const bagroundImage = poster;
 
+  const [isOpen, setIsOpen] = useState(false);
+
   const [MovieDetails, setMovieDetails] = useState([]);
+
+  useEffect(() => {}, []);
+
   /* 
   setMovieDetails({ title: "Avengers", year: "2021" }) */
 
@@ -67,6 +71,13 @@ const Home = () => {
               Panda is fighting
             </h5>
           </Card>
+        </div>
+        <div className="flex justify-end absolute right-0 top-20">
+          {isOpen && <PopularMoviesSection />}
+          <Button
+            onClick={(e) => setIsOpen(!isOpen)}
+            className="fixed right-0 top-80"
+          ></Button>
         </div>
       </div>
     </div>
