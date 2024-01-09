@@ -25,7 +25,7 @@ const Home = () => {
           height: "50vw",
         }}
       >
-        <div className="flex flex-col max-w-sm ">
+        <div className="flex flex-col max-w-sm">
           <h1 className="text-4xl bottom-0  font-bold text-white pl-5 pt-9">
             Kung Fu Panda
           </h1>
@@ -42,7 +42,7 @@ const Home = () => {
             <div className="flex flex-row"></div>
           </div>
           <p className="max-w-sm pl-5 pt-1 text-white">
-            Kung Fu Panda is an animated film about Po, a clumsy panda, who is
+            Kung Fu Panda is an animated film about Ciaran, a clumsy panda, who is
             chosen as the Dragon Warrior to fight the formidable villain Tai
             Lung.
           </p>
