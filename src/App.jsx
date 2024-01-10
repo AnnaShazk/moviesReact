@@ -9,7 +9,7 @@ import Favourites from "./components/Main/Favourites/Favourites";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
-  const [fetchMovies, setFetchMovies] = useState([]);
+  const [fetchMoviesData, setfetchMoviesData] = useState([]);
 
   useEffect(() => {
     const fetchMoviesData = async () => {
@@ -17,7 +17,7 @@ function App() {
         const response = await axios.get(
           `${import.meta.env.VITE_APP_URL}/api/movies`
         );
-        setFetchMovies(response.data);
+        setfetchMoviesData(response.data);
       } catch (err) {
         console.error(err);
       }
@@ -32,10 +32,14 @@ function App() {
   return (
     <>
       <div className={`flex flex-col min-h-screen ${darkMode ? "dark" : ""}`}>
-        <Header toggleCiaranMode={toggleCiaranMode} darkMode={darkMode} />
+        <Header
+          toggleCiaranMode={toggleCiaranMode}
+          darkMode={darkMode}
+          fetchMoviesData={fetchMoviesData}
+        />
         <div className="">
           <div className="col-span-4">
-            <Main fetchMovies={fetchMovies} />
+            <Main fetchMoviesData={fetchMoviesData} />
           </div>
           {/*             <PopularMoviesSection />
            */}{" "}
