@@ -22,7 +22,6 @@ function App() {
           </div>
           {/*             <PopularMoviesSection />
            */}{" "}
-          <Favourites />
         </div>
         <FooterComponent />
       </div>

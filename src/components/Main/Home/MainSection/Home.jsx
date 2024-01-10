@@ -9,10 +9,19 @@ import { Button } from "flowbite-react";
 import { Card } from "flowbite-react";
 import AddMovieForm from "../../../AddMovie/AddMovieForm";
 import axios from "axios";
+import AddToFavourites from "../../Favourites/AddToFavourites";
+import Favourites from "../../Favourites/Favourites";
 
 const Home = () => {
-  const bagroundImage = posterPotato;
+  const [favourites, setFavourites] = useState([]);
 
+  const addToFavourites = (movie) => {
+    setFavourites([...favourites, movie]);
+  };
+
+  const deleteFavourite = (movieToDelete) => {
+    setFavourites(favourites.filter(movie => movie !== movieToDelete));
+  };
   const [letsSee, setLetsSee] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
   const [fetchMovies, setFetchMovies] = useState([]);
@@ -84,21 +93,21 @@ const Home = () => {
             <div className="flex gap-4 pt-5">
               {fetchMovies.map((movie) => (
                 <div>
-                  <Card
-                    key={movie._id}
-                    className="max-w-xs w-64 "
-                    imgSrc={movie?.poster}
-                  >
-                    <div className="flex gap-6">
-                      <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                        {movie.title}
-                      </h5>
-                      <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                        {movie.year}
-                      </h5>
-                    </div>
-                    <Button>Add to favorites</Button>
-                  </Card>
+            <Card
+              key={movie._id}
+              className="max-w-xs w-64 "
+              imgSrc={movie?.poster}
+            >
+              <div className="flex gap-6">
+                <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  {movie.title}
+                </h5>
+                <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  {movie.year}
+                </h5>
+              </div>
+              <AddToFavourites movie={movie} addToFavourites={addToFavourites} />
+            </Card>
                 </div>
               ))}
             </div>

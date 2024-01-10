@@ -1,12 +1,25 @@
 import React from "react";
+import { useState } from "react";
 import { Navbar } from "flowbite-react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import SearchBar from "./SearchBar";
 import "./Header.css";
 import AddMovieForm from "../AddMovie/AddMovieForm";
+import Favourites from "../Main/Favourites/Favourites";
+
+
 
 const Header = ({ toggleCiaranMode, darkMode }) => {
+  const [favourites, setFavourites] = useState([]);
+
+  const addToFavourites = (movie) => {
+    setFavourites([...favourites, movie]);
+  };
+
+  const deleteFavourite = (movieToDelete) => {
+    setFavourites(favourites.filter(movie => movie !== movieToDelete));
+  };
   return (
     <Navbar fluid className="dark:bg-black dark:text-white">
       <Navbar.Brand as={Link} href="https://flowbite-react.com">
@@ -26,7 +39,7 @@ const Header = ({ toggleCiaranMode, darkMode }) => {
           </NavLink>
           <NavLink to="#">Movies</NavLink>
           <NavLink to="#">WishList</NavLink>
-          <NavLink to="#">Favourites</NavLink>
+          <Favourites favourites={favourites} deleteFavourite={deleteFavourite} />
           <NavLink to="#">About</NavLink>
 
           <AddMovieForm />
