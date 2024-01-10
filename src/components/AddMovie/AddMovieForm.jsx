@@ -57,7 +57,7 @@ const AddMovieForm = () => {
       {isOpen && (
         <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
           <form onSubmit={handleSubmit} className="max-w-md mx-auto bg-white p-5 rounded shadow-md">
-            <button onClick={() => setIsOpen(false)} className="float-right">X</button>
+            <button onClick={() => setIsOpen(false)} className="float-right text-black">X</button>
 
             {isSubmitted && <p className="text-green-500">Movie Submitted</p>}
 
