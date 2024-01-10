@@ -20,7 +20,7 @@ const Home = () => {
   };
 
   const deleteFavourite = (movieToDelete) => {
-    setFavourites(favourites.filter(movie => movie !== movieToDelete));
+    setFavourites(favourites.filter((movie) => movie !== movieToDelete));
   };
   const [letsSee, setLetsSee] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
@@ -48,78 +48,83 @@ const Home = () => {
   return (
     <>
       {fetchMovies ? (
-        <div className="main_wrapper grid ">
-          <div
-            style={{
-              backgroundImage: `url(${"https://m.media-amazon.com/images/M/MV5BODJkZTZhMWItMDI3Yy00ZWZlLTk4NjQtOTI1ZjU5NjBjZTVjXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_.jpg"})`,
-              backgroundRepeat: "repeat-y",
-              backgroundSize: "cover",
-              width: "100%",
-              height: "50vw",
-            }}
-          >
-            <div className="flex flex-col max-w-sm">
-              <h1 className="text-4xl bottom-0  font-bold text-white pl-5 pt-9">
-                Kung Fu Panda
-              </h1>
-
-              <div className="flex  items-center gap-5 p-5">
-                <FontAwesomeIcon icon={faStar} color="yellow" />
-                <h3 className="text-white font-semibold  mt-1">8.2</h3>
-                <Button className="rounded-3xl h-7 bg-emerald-600">
-                  Completed
-                </Button>
-                <div className="flex gap-2">
-                  <h2 className="text-white">Simple</h2>
-                  <h2 className="text-white">2024</h2>
-                </div>
-                <div className="flex flex-row"></div>
-              </div>
-              <p className="max-w-sm pl-4 pt-1 text-white bg-black bg-opacity-40 rounded">
-                Kung Fu Panda is an animated film about Mahmoud, a
-                subscription-hating, login-page-loving panda, who is chosen as
-                the Simple Dragon to fight the formidable villain
-                "Documentation".
-              </p>
-              <div className="flex gap-2 pl-5 pt-4">
-                <Button className="max-w-sm rounded-3xl h-7 bg-emerald-600">
-                  Watch Now
-                </Button>
-                <Button className="max-w-sm rounded-2xl h-7 bg-emerald-600">
-                  Add to Watchlist
-                </Button>
-              </div>
-            </div>
-            <div className="flex gap-4 pt-5">
-              {fetchMovies.map((movie) => (
-                <div>
-            <Card
-              key={movie._id}
-              className="max-w-xs w-64 "
-              imgSrc={movie?.poster}
+        fetchMovies.map((movie) => (
+          <div className="main_wrapper grid ">
+            <div
+              style={{
+                backgroundImage: `url(${movie.poster})`,
+                backgroundRepeat: "repeat-y",
+                backgroundSize: "cover",
+                width: "100%",
+                height: "50vw",
+              }}
             >
-              <div className="flex gap-6">
-                <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+              <div className="flex flex-col max-w-sm ">
+                <h1 className="text-4xl bottom-0   font-bold text-white pl-5 pt-9">
                   {movie.title}
-                </h5>
-                <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                  {movie.year}
-                </h5>
-              </div>
-              <AddToFavourites movie={movie} addToFavourites={addToFavourites} />
-            </Card>
+                </h1>
+
+                <div className="flex  items-center gap-5 p-5">
+                  <FontAwesomeIcon icon={faStar} color="yellow" />
+                  <h3 className="text-white font-semibold  mt-1">
+                    {movie.rating}
+                  </h3>
+                  <h2 className="text-white"></h2>
+                  <Button className="rounded-3xl h-7 bg-emerald-600">
+                    Completed
+                  </Button>
+                  <div className="flex gap-2">
+                    <h2 className="text-white">{movie.director}</h2>
+                    <h2 className="text-white">{movie.year}</h2>
+                  </div>
+                  <div className="flex flex-row"></div>
                 </div>
-              ))}
-            </div>
-            <div className="flex justify-end absolute right-0 top-20">
-              {isOpen && <PopularMoviesSection />}
-              <Button
-                onClick={(e) => setIsOpen(!isOpen)}
-                className="fixed right-0 top-80"
-              ></Button>
+                <p className="max-w-sm pl-4 pt-1 text-white bg-black backdrop-blur-lg bg-[rgba(255,255,255,0.4)] rounded-xl">
+                  {movie.movie_details}
+                </p>
+                <div className="flex gap-2 pl-5 pt-4">
+                  <Button className="max-w-sm rounded-3xl h-7 bg-emerald-600">
+                    Watch Now
+                  </Button>
+                  <Button className="max-w-sm rounded-2xl h-7 bg-emerald-600">
+                    Add to Watchlist
+                  </Button>
+                </div>
+              </div>
+              <div className="flex gap-4 pt-5">
+                {fetchMovies.map((movie) => (
+                  <div key={movie._id}>
+                    <Card
+                      key={movie._id}
+                      className="max-w-xs w-64 "
+                      imgSrc={movie?.poster}
+                    >
+                      <div className="flex gap-6">
+                        <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                          {movie.title}
+                        </h5>
+                        <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                          {movie.year}
+                        </h5>
+                      </div>
+                      <AddToFavourites
+                        movie={movie}
+                        addToFavourites={addToFavourites}
+                      />
+                    </Card>
+                  </div>
+                ))}
+              </div>
+              <div className="flex justify-end absolute right-0 top-20">
+                {isOpen && <PopularMoviesSection />}
+                <Button
+                  onClick={(e) => setIsOpen(!isOpen)}
+                  className="fixed right-0 top-80"
+                ></Button>
+              </div>
             </div>
           </div>
-        </div>
+        ))
       ) : (
         <p>Conecting...</p>
       )}

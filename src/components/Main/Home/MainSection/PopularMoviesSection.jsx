@@ -8,9 +8,8 @@ const PopularMoviesSection = () => {
   return (
     /*     w-full max-w-sm mx-auto justify-center my-auto   */
     <div>
-      <div className="flex w-full max-w-sm mx-auto justify-center my-auto ">
-
-        <div className="container bg-blue-500  p-4 rounded-2xl max-w-xs relative">
+      <div className="flex w-full max-w-sm mx-auto justify-center my-auto   ">
+        <div className="container bg-[rgba(255,255,255,0.4)] p-4 rounded-2xl max-w-xs relative backdrop-blur-lg ">
           <div className="items-center p-2 ">
             <div className="ribbon-container">
               <div className="ribbon"></div>
