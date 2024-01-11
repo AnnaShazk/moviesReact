@@ -27,6 +27,7 @@ const Home = () => {
 
   const [fetchMovies, setFetchMovies] = useState([]);
   const [fetchMoviesCards, setFetchMoviesCards] = useState([]);
+  
   /*   const [MovieDetails, setMovieDetails] = useState([]);
    */ /* 
   setMovieDetails({ title: "Avengers", year: "2021" }) */
