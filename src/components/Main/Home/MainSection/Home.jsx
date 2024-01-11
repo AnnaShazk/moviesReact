@@ -51,7 +51,7 @@ const Home = () => {
     <>
       {fetchMovies ? (
         fetchMovies.slice(0, 1).map((movie) => (
-          <div className="main_wrapper grid ">
+          <div key={movie.id} className="main_wrapper grid ">
             <div
               style={{
                 backgroundImage: `url(${movie.poster})`,
