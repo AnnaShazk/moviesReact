@@ -92,12 +92,12 @@ const Home = () => {
               </div>
             </div>
             <div className="flex gap-4 pt-5">
-              {fetchMovies.map((movie) => (
-                <div>
+              {fetchMovies.map((movie, index) => (
+                <div key={index}>
                   <Card
-                    key={movie._id}
                     className="max-w-xs w-64 "
                     imgSrc={movie?.poster}
+                    key={movie._id}
                   >
                     <div className="flex gap-6">
                       <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
