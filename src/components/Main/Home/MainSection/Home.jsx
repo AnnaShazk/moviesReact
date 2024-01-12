@@ -95,7 +95,7 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              {/* <div className="flex gap-4 pt-5">
+              <div className="flex gap-4 pt-5">
                 <CardMovie />
               </div>
               <div className="flex justify-end absolute right-0 top-20">
@@ -104,7 +104,7 @@ const Home = () => {
                   onClick={(e) => setIsOpen(!isOpen)}
                   className="fixed right-0 top-80"
                 ></Button>
-              </div> */}
+              </div>
             </div>
             <div className="flex items">
               <Pagination

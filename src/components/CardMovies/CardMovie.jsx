@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Card } from "flowbite-react";
+import AddToFavourites from "../Favourites/AddToFavourites";
 
 const CardMovie = () => {
   const [movieDetails, setMovieDetails] = useState([]);
@@ -28,6 +29,7 @@ const CardMovie = () => {
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
               {movie.title}
             </h5>
+            <AddToFavourites movie={movie} />
           </div>
         </Card>
       ))}
