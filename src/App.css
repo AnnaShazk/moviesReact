@@ -9,3 +9,36 @@ body {
   box-sizing: border-box;
   font-family: Nunito sans;
 }
+
+.button-pagination {
+  width: 60px;
+  height: 8px;
+  display: inline-block;
+  margin-right: 5px;
+  background-color: #d3d3d3;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.button-pagination:last-child {
+  margin-right: 0;
+}
+
+.button-pagination.active {
+  width: 40px;
+  background-color: #ff8c00;
+  cursor: default;
+}
+
+#app-pagination {
+  width: auto;
+  height: auto;
+  padding: 5px 0;
+  margin-left: 0;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  overflow: hidden;
+  z-index: 1;
+}

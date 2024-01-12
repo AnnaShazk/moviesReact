@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     const fetchMovies = async () => {
-      const response = await axios.get(import.meta.env.VITE_APP_URL);
+      const response = await axios.get(`${import.meta.env.VITE_APP_URL}/api/movies`);
       setMovies(response.data);
     };
 
@@ -15,17 +15,18 @@ const Movies = () => {
 
   return (
     <div>
-      {movies.map((movie, index) => (
-        <div key={index}>
+      {movies.map((movie) => (
+        <div key={movie.id}>
           <h2>{movie.title}</h2>
           <p>{movie.director}</p>
           <p>{movie.rating}</p>
-          <p>{Year}</p>
-          <p>{movie.description}</p>
-          <img src={movie.image} alt={movie.title} />
+          <p>{movie.year}</p>
+          <p>{movie.movie_details}</p>
+          <img src={movie.poster} alt={movie.title} />
         </div>
       ))}
     </div>
+    
   );
 };
 

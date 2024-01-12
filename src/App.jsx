@@ -7,6 +7,7 @@ import "./App.css";
 import PopularMoviesSection from "./components/Main/Home/MainSection/PopularMoviesSection";
 import Favourites from "./components/Main/Favourites/Favourites";
 import axios from "axios";
+
 function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [fetchMoviesData, setfetchMoviesData] = useState([]);
