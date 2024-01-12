@@ -3,7 +3,6 @@ import { Route, Routes, Link } from "react-router-dom";
 import Home from "../Home/MainSection/Home";
 import WishList from "../Home/MainSection/WishList";
 import Movies from "../Home/MainSection/Movies";
-import Favorites from "../Favourites/Favourites";
 import MovieDetails from "../Home/MainSection/MovieDetails";
 import NotFound from "../../NotFound/NotFound";
 
@@ -14,7 +13,6 @@ const Main = () => {
         <Route path="/" element={<Home />} />
         <Route path="/wishlist" element={<WishList />} />
         <Route path="/movies" element={<Movies />} />
-        <Route path="/favorites" element={<Favorites />} />
         <Route path="/movies/:id" element={<MovieDetails />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

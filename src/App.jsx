@@ -5,7 +5,6 @@ import Main from "./components/Main/Home/Main";
 import FooterComponent from "./components/Footer/FooterComponent";
 import "./App.css";
 import PopularMoviesSection from "./components/Main/Home/MainSection/PopularMoviesSection";
-import Favourites from "./components/Main/Favourites/Favourites";
 import axios from "axios";
 
 function App() {
