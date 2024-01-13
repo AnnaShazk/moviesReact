@@ -6,6 +6,7 @@ import SearchBar from "./SearchBar";
 import "./Header.css";
 import AddMovieForm from "../AddMovie/AddMovieForm";
 import Favourites from "../Favourites/Favourites";
+import PublicMovies from "../PublicMovies/PublicMovies";
 
 const Header = ({ toggleCiaranMode, darkMode }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -13,7 +14,7 @@ const Header = ({ toggleCiaranMode, darkMode }) => {
   return (
     <Navbar fluid className="dark:bg-black dark:text-white ">
       <Link to="/">
-        <div className="flex">
+        <div className="flex s">
           <img src={logo} className="mr-3 h-6 sm:h-9" alt="Movies" />
           <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
             Movies
@@ -27,6 +28,7 @@ const Header = ({ toggleCiaranMode, darkMode }) => {
           <NavLink to="#">Movies</NavLink>
           <NavLink to="#">WishList</NavLink>
           <NavLink to="#">About</NavLink>
+          <Link to="/publicmovies">Public Movies</Link>
           <AddMovieForm />
           <Favourites />
           <label className="switch">
