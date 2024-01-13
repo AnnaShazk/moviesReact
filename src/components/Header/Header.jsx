@@ -5,6 +5,7 @@ import logo from "../../assets/logo.png";
 import SearchBar from "./SearchBar";
 import "./Header.css";
 import AddMovieForm from "../AddMovie/AddMovieForm";
+import Favourites from "../Favourites/Favourites";
 
 const Header = ({ toggleCiaranMode, darkMode }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -27,6 +28,7 @@ const Header = ({ toggleCiaranMode, darkMode }) => {
           <NavLink to="#">WishList</NavLink>
           <NavLink to="#">About</NavLink>
           <AddMovieForm />
+          <Favourites />
           <label className="switch">
             <input
               onChange={toggleCiaranMode}

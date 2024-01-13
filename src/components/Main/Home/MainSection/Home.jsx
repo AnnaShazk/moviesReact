@@ -112,7 +112,6 @@ const Home = () => {
                 setActiveIndex={setActiveIndex}
               />
             </div>
-            <Movies />
           </div>
         ))
       ) : (
