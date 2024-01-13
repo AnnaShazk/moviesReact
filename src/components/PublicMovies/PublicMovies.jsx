@@ -102,9 +102,9 @@ const PublicMovies = () => {
               key={movie.id}
               className=" bg-white shadow-lg rounded-lg overflow-hidden w-full"
             >
-              <div className="relative pb-48 overflow-hidden">
+              <div className="relative pb-64 overflow-hidden">
                 <img
-                  className="absolute inset-0 h-full w-full object-cover"
+                  className="absolute inset-0 h-full w-full object-fill"
                   src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                   alt={movie.title}
                 />
