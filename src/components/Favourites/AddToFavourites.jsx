@@ -27,7 +27,12 @@ const AddToFavourites = ({ movie }) => {
 
   return (
     <>
-      <button onClick={addToFavourites}>Add to Favourites</button>
+      <button
+        onClick={addToFavourites}
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      >
+        Add to Favourites
+      </button>
       {isModalOpen && (
         <div
           className="fixed z-10 inset-0 overflow-y-auto"
