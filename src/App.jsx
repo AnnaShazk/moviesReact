@@ -30,7 +30,6 @@ function App() {
   const toggleCiaranMode = () => {
     setDarkMode(!darkMode);
   };
-  console.log(fetchMoviesData); // Add this line here
 
   return (
     <>
