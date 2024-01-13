@@ -52,7 +52,7 @@ const ShowFavourites = () => {
                 {favourites.map((movie) => (
                   <div key={movie.id}>
                     <h1 className="text-2xl">{movie.title}</h1>
-                    <p>{movie.description}</p>
+                    <p>{movie.movie_details}</p>
                     <p>
                       Rating: <span className="text-yellow-500">&#9733;</span>{" "}
                       {movie.rating}
