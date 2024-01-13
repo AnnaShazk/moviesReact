@@ -4,6 +4,12 @@ const ShowFavourites = () => {
   const [favourites, setFavourites] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
 
+  const removeFromFavourites = (id) => {
+    const newFavourites = favourites.filter((movie) => movie.id !== id);
+    setFavourites(newFavourites);
+    localStorage.setItem("favourites", JSON.stringify(newFavourites));
+  };
+
   useEffect(() => {
     const fetchFavourites = () => {
       let favourites = localStorage.getItem("favourites");
@@ -58,6 +64,13 @@ const ShowFavourites = () => {
                       {movie.rating}
                     </p>
                     <img src={movie.poster} alt={movie.title} />
+                    <button
+                      type="button"
+                      className="mt-3 w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+                      onClick={() => removeFromFavourites(movie.id)}
+                    >
+                      Remove from Favourites
+                    </button>
                   </div>
                 ))}
               </div>
