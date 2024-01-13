@@ -6,6 +6,7 @@ import FooterComponent from "./components/Footer/FooterComponent";
 import "./App.css";
 import PopularMoviesSection from "./components/Main/Home/MainSection/PopularMoviesSection";
 import axios from "axios";
+import CompanySection from "./components/CompanySection/CompanySection";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -44,6 +45,7 @@ function App() {
           {/*             <PopularMoviesSection />
            */}{" "}
         </div>
+        <CompanySection darkMod={darkMode} />
         <FooterComponent />
       </div>
     </>
