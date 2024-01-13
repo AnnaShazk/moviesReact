@@ -8,7 +8,7 @@ import AddMovieForm from "../AddMovie/AddMovieForm";
 import Favourites from "../Favourites/Favourites";
 import PublicMovies from "../PublicMovies/PublicMovies";
 
-const Header = ({ toggleCiaranMode, darkMode }) => {
+const Header = ({ toggleCiaranMode, darkMode, fetchMoviesData }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -24,7 +24,7 @@ const Header = ({ toggleCiaranMode, darkMode }) => {
       <Navbar.Toggle />
       <Navbar.Collapse>
         <div className="flex items-center  gap-6">
-          <SearchBar />
+          <SearchBar fetchMoviesData={fetchMoviesData} />
           <NavLink to="#">Movies</NavLink>
           <NavLink to="#">WishList</NavLink>
           <NavLink to="#">About</NavLink>

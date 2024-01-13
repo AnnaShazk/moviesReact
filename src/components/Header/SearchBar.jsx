@@ -54,7 +54,7 @@ const SearchBar = ({ fetchMoviesData }) => {
                   key={movie.id}
                 >
                   <svg
-                    class="absolute w-4 h-4 left-2 top-2"
+                    className="absolute w-4 h-4 left-2 top-2"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 20 20"
                     fill="currentColor"
