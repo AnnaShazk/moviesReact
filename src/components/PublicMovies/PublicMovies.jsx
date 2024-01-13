@@ -136,7 +136,7 @@ const PublicMovies = () => {
             </div>
           ))}
         </div>
-        <div className="flex flex-col gap-2 max-w-sm   mt-4">
+        <div className="flex flex-col gap-2 max-w-sm">
           <Accordion className="w-full sm:w-64 shadow-lg">
             <Accordion.Panel>
               <Accordion.Title className="text-black font-bold">
