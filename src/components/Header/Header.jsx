@@ -5,19 +5,10 @@ import logo from "../../assets/logo.png";
 import SearchBar from "./SearchBar";
 import "./Header.css";
 import AddMovieForm from "../AddMovie/AddMovieForm";
-import Favourites from "../Main/Favourites/Favourites";
+import Favourites from "../Favourites/Favourites";
 
-const Header = ({ toggleCiaranMode, darkMode, fetchMoviesData }) => {
-  const [favourites, setFavourites] = useState([]);
+const Header = ({ toggleCiaranMode, darkMode }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const addToFavourites = (movie) => {
-    setFavourites([...favourites, movie]);
-  };
-
-  const deleteFavourite = (movieToDelete) => {
-    setFavourites(favourites.filter((movie) => movie !== movieToDelete));
-  };
 
   return (
     <Navbar fluid className="dark:bg-black dark:text-white ">
@@ -32,14 +23,12 @@ const Header = ({ toggleCiaranMode, darkMode, fetchMoviesData }) => {
       <Navbar.Toggle />
       <Navbar.Collapse>
         <div className="flex items-center  gap-6">
-          <SearchBar fetchMoviesData={fetchMoviesData} />
+          <SearchBar />
           <NavLink to="#">Movies</NavLink>
           <NavLink to="#">WishList</NavLink>
-          <Link to="favorites" onClick={() => setIsModalOpen(true)}>
-            Favourites
-          </Link>
           <NavLink to="#">About</NavLink>
           <AddMovieForm />
+          <Favourites />
           <label className="switch">
             <input
               onChange={toggleCiaranMode}
@@ -49,19 +38,6 @@ const Header = ({ toggleCiaranMode, darkMode, fetchMoviesData }) => {
             <span className="slider"></span>
           </label>
         </div>
-        {isModalOpen && (
-          <div className="modal">
-            <div className="modal-content">
-              <span className="close" onClick={() => setIsModalOpen(false)}>
-                &times;
-              </span>
-              <Favourites
-                favourites={favourites}
-                deleteFavourite={deleteFavourite}
-              />
-            </div>
-          </div>
-        )}
       </Navbar.Collapse>
     </Navbar>
   );

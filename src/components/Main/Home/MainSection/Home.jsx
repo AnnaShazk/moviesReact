@@ -9,23 +9,12 @@ import { Button } from "flowbite-react";
 import { Card } from "flowbite-react";
 import AddMovieForm from "../../../AddMovie/AddMovieForm";
 import axios from "axios";
-import AddToFavourites from "../../Favourites/AddToFavourites";
-import Favourites from "../../Favourites/Favourites";
 import Pagination from "../../../Pagination/Pagination";
 import CardMovie from "../../../CardMovies/CardMovie";
 import Movies from "./Movies";
 
 const Home = () => {
-  const [favourites, setFavourites] = useState([]);
   const [activeIndex, setActiveIndex] = useState(0);
-
-  const addToFavourites = (movie) => {
-    setFavourites([...favourites, movie]);
-  };
-
-  const deleteFavourite = (movieToDelete) => {
-    setFavourites(favourites.filter((movie) => movie !== movieToDelete));
-  };
   const [letsSee, setLetsSee] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -106,7 +95,7 @@ const Home = () => {
                   </div>
                 </div>
               </div>
-              {/* <div className="flex gap-4 pt-5">
+              <div className="flex gap-4 pt-5">
                 <CardMovie />
               </div>
               <div className="flex justify-end absolute right-0 top-20">
@@ -115,7 +104,7 @@ const Home = () => {
                   onClick={(e) => setIsOpen(!isOpen)}
                   className="fixed right-0 top-80"
                 ></Button>
-              </div> */}
+              </div>
             </div>
             <div className="flex items">
               <Pagination
@@ -123,7 +112,6 @@ const Home = () => {
                 setActiveIndex={setActiveIndex}
               />
             </div>
-            <Movies />
           </div>
         ))
       ) : (
