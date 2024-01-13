@@ -17,7 +17,7 @@ import nationalGeographicV from "../../assets/Videos/national-geographic.mp4";
 import pixarV from "../../assets/Videos/pixar.mp4";
 
 function CompanySection(darkMode) {
-  console.log(darkMode);
+  console.log(darkMode.darkMod);
   const productionHouseList = [
     {
       id: 1,
@@ -48,27 +48,27 @@ function CompanySection(darkMode) {
 
   const productionHouseListBlackBackground = [
     {
-      id: 1,
+      id: 3,
       image: disneyBl,
       video: disneyV,
     },
     {
-      id: 2,
+      id: 4,
       image: pixarBl,
       video: pixarV,
     },
     {
-      id: 3,
+      id: 5,
       image: marvel,
       video: marvelV,
     },
     {
-      id: 4,
+      id: 6,
       image: starwarBl,
       video: starwarV,
     },
     {
-      id: 5,
+      id: 7,
       image: nationalGBl,
       video: nationalGeographicV,
     },
@@ -77,7 +77,7 @@ function CompanySection(darkMode) {
   return (
     <>
       <div className="flex gap-2 md:gap-5 p-2 px-5 md:px-16 dark:bg-black">
-        {(darkMode
+        {(darkMode.darkMod == false
           ? productionHouseListBlackBackground
           : productionHouseList
         ).map((item) => (
