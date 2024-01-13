@@ -36,9 +36,9 @@ const AddMovieForm = () => {
         throw new Error(`HTTP error ${response.status}`);
       }
 
-      setIsSubmitted(true); // Set isSubmitted to true to show the "Submitted!" message
+      setIsSubmitted(true); 
 
-      // Reset form fields
+     
       setTitle("");
       setDirector("");
       setRating("");
