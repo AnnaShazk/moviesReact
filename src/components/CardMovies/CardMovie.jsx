@@ -26,14 +26,15 @@ const CardMovie = () => {
   return (
     <div className="flex gap-4 pt-5">
       {movieDetails.map((movie) => (
-        <Card className="max-w-xs w-64" imgSrc={movie?.poster}>
+        <div className="max-w-xs w-64">
+          <img src={movie?.poster} alt="" />
           <div className="flex gap-6">
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
               {movie.title}
             </h5>
             <AddToFavourites movie={movie} />
           </div>
-        </Card>
+        </div>
       ))}
     </div>
   );
