@@ -3,6 +3,7 @@ import axios from "axios";
 import { Card } from "flowbite-react";
 import AddToFavourites from "../Favourites/AddToFavourites";
 import { Link } from "react-router-dom";
+import DeleteMovie from "../DeleteMovie/DeleteMovie";
 
 const CardMovie = () => {
   const [movieDetails, setMovieDetails] = useState([]);
@@ -26,13 +27,15 @@ const CardMovie = () => {
     <div className="flex gap-4 pt-5">
       {movieDetails.map((movie) => (
         <Link to={`/testdetail/${movie.id}`} key={movie.id}>
-          {" "}
           <Card className="max-w-xs w-64" imgSrc={movie?.poster}>
-            <div className="flex gap-6">
+            <div className="flex flex-col gap-6">
               <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                 {movie.title}
               </h5>
-              <AddToFavourites movie={movie} />
+              <div className="flex">
+                <AddToFavourites movie={movie} />
+                <DeleteMovie id={movie.id} setMovieDetails={setMovieDetails} />
+              </div>
             </div>
           </Card>
         </Link>
