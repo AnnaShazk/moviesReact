@@ -50,6 +50,7 @@ const CardMovie = () => {
               className=" cursor-pointer"
               icon={faComment}
               color="white"
+              size="2x"
             />
 
             <DeleteMovie id={movie.id} setMovieDetails={setMovieDetails} />

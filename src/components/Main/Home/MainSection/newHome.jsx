@@ -46,7 +46,7 @@ const newHome = () => {
           }}
         >
           <div className="max-w-90 xxs:max-w-full sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl">
-            <h2 className="text-white text-xl  sm:text-2xl  md:text-4xl lg:text-7xl">
+            <h2 className="text-white text-xl  sm:text-2xl  md:text-4xl lg:text-5xl">
               {movie.title}
             </h2>
 
