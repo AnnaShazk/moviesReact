@@ -2,9 +2,12 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import CommentSection from "../../../Comments/CommentSection";
+import DeleteMovie from "../../../DeleteMovie/DeleteMovie";
+
 const MovieDetails = () => {
   const { id } = useParams();
   const [movie, setMovie] = useState(null);
+  const [movieDetails, setMovieDetails] = useState(movie);
 
   useEffect(() => {
     const fetchMovie = async () => {
@@ -40,8 +43,9 @@ const MovieDetails = () => {
               <p className="mt-2 text-gray-500">{movie.movie_details}</p>
               <p className="mt-2 text-gray-500">Director: {movie.director}</p>
               <p className="mt-2 text-gray-500">Rating: {movie.rating}</p>
-              <p className="mt-2 text-gray-500">Year: {movie.year}</p>
-            </div>
+              <p className="mt-2 mb-6 text-gray-500">Year: {movie.year}</p>
+              <DeleteMovie id={movie.id} setMovieDetails={setMovieDetails} />
+        </div>
           </div>
         </div>
         <CommentSection />
