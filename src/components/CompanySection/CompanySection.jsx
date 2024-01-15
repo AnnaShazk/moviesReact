@@ -76,7 +76,7 @@ function CompanySection(darkMode) {
 
   return (
     <>
-      <div className="flex gap-2 md:gap-5 p-2 mt-9 px-5 md:px-16 dark:bg-black">
+      <div className="flex gap-2 md:gap-5 p-2 pt-9 px-5 md:px-16 dark:bg-black">
         {(darkMode.darkMod == false
           ? productionHouseListBlackBackground
           : productionHouseList
