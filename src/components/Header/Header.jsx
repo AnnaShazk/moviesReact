@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navbar } from "flowbite-react";
+import { Button, Navbar } from "flowbite-react";
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
 import SearchBar from "./SearchBar";
@@ -22,14 +22,12 @@ const Header = ({ toggleCiaranMode, darkMode, fetchMoviesData }) => {
         </div>
       </Link>
       <Navbar.Toggle />
-      <Navbar.Collapse >
+      <Navbar.Collapse>
         <div className="flex flex-wrap items-center  gap-6">
           <SearchBar fetchMoviesData={fetchMoviesData} />
-          <NavLink to="/movies">Movies</NavLink>
-          <NavLink to="#">WishList</NavLink>
-          <NavLink to="#">About</NavLink>
-          <Link to="/publicmovies">Public Movies</Link>
           <AddMovieForm />
+
+          <Link to="/publicmovies">Public Movies</Link>
           <Favourites />
           <label className="switch">
             <input
