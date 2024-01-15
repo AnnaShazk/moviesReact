@@ -3,6 +3,7 @@ import axios from "axios";
 import { Card } from "flowbite-react";
 import AddToFavourites from "../Favourites/AddToFavourites";
 import { Link } from "react-router-dom";
+import DeleteMovie from "../DeleteMovie/DeleteMovie";
 
 const CardMovie = () => {
   const [movieDetails, setMovieDetails] = useState([]);
