@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
+
 
 const DeleteMovie = ({ id, setMovieDetails }) => {
+  const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const deleteMovie = async () => {
@@ -11,8 +14,11 @@ const DeleteMovie = ({ id, setMovieDetails }) => {
       await axios.delete(`${import.meta.env.VITE_APP_URL}/api/movies/${id}`);
       setMovieDetails((prevMovies) =>
         prevMovies.filter((movie) => movie.id !== id)
+
       );
       setIsModalOpen(false);
+      navigate("/");
+      history.push("/");
     } catch (error) {
       console.error("Failed to delete movie:", error);
     }
