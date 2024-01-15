@@ -13,7 +13,7 @@ const Main = () => {
   return (
     <main className="flex-grow dark:bg-black">
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<NewHome />} />
         <Route path="/wishlist" element={<WishList />} />
         <Route path="/movies" element={<Movies />} />
         <Route path="/movies/:id" element={<MovieDetails />} />
