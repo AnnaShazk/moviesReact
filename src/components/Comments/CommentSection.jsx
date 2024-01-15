@@ -107,7 +107,7 @@ const CommentSection = ({ movieId }) => {
           </div>
         </form>
       </div>
-      <section className="relative flex items-center justify-start mb-6  antialiased min-full  ">
+      <section className="relative flex items-center justify-start mb-6  w-full  ">
         <div className=" w-full">
           {comments.map((comment, index) => (
             <div
