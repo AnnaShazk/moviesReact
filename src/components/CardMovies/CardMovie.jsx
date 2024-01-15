@@ -52,13 +52,6 @@ const CardMovie = () => {
           <div className="card-toolbar flex flex-col gap-10 absolute top-0 right-0 w-0 h-full bg-white bg-opacity-75 items-center justify-center transition-width duration-200">
             <AddToFavourites movie={movie} />
 
-            <FontAwesomeIcon
-              className=" cursor-pointer"
-              icon={faComment}
-              color="white"
-              size="2x"
-            />
-
             <DeleteMovie id={movie.id} setMovieDetails={setMovieDetails} />
           </div>
         </div>
