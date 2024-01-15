@@ -6,6 +6,8 @@ import Movies from "../Home/MainSection/Movies";
 import MovieDetails from "../Home/MainSection/MovieDetails";
 import NotFound from "../../NotFound/NotFound";
 import PublicMovies from "../../PublicMovies/PublicMovies";
+import PublicMoviesDetails from "../../PublicMovies/PublicMoviesDetails";
+import TestDetail from "../../TestDetail";
 
 const Main = () => {
   return (
@@ -16,7 +18,8 @@ const Main = () => {
         <Route path="/movies" element={<Movies />} />
         <Route path="/movies/:id" element={<MovieDetails />} />
         <Route path="/publicmovies/" element={<PublicMovies />} />
-        <Route path="/publicmovies/:id" element={<MovieDetails />} />
+        <Route path="/publicmovies/:id" element={<PublicMoviesDetails />} />
+        <Route path="/testdetail/:id" element={<TestDetail />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </main>
