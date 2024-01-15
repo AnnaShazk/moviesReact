@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Accordion } from "flowbite-react";
+import { Link } from "react-router-dom";
 
 const PublicMovies = () => {
   const [movies, setMovies] = useState([]);
@@ -98,42 +99,41 @@ const PublicMovies = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xxxl:grid-cols-4  gap-4">
           {" "}
           {filteredMovies.map((movie) => (
-            <div
-              key={movie.id}
-              className=" bg-white shadow-lg rounded-lg overflow-hidden w-full"
-            >
-              <div className="relative pb-64 overflow-hidden">
-                <img
-                  className="absolute inset-0 h-full w-full object-fill"
-                  src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                  alt={movie.title}
-                />
+            <Link to={`/publicmovies/${movie.id}`} key={movie.id}>
+              <div className=" bg-white shadow-lg rounded-lg overflow-hidden w-full">
+                <div className="relative pb-64 overflow-hidden">
+                  <img
+                    className="absolute inset-0 h-full w-full object-fill"
+                    src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                    alt={movie.title}
+                  />
+                </div>
+                <div className="p-4  flex flex-col dark:bg-gray-900 dark:text-white">
+                  <h2 className="font-bold text-md mb-2">
+                    {movie.title} ({new Date(movie.release_date).getFullYear()})
+                  </h2>
+                  <p className="text-gray-700 mt-auto dark:text-white">
+                    Director: {movie.director?.name}
+                  </p>
+                  <p className="text-gray-700">Cast:</p>
+                  <ul>
+                    {movie.cast?.slice(0, 3).map((actor) => (
+                      <li
+                        key={actor.cast_id}
+                        className="flex items-center space-x-2 my-1"
+                      >
+                        <img
+                          className="w-10 h-10 rounded-full object-cover"
+                          src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`}
+                          alt={actor.name}
+                        />
+                        <span>{actor.name}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-              <div className="p-4  flex flex-col dark:bg-gray-900 dark:text-white">
-                <h2 className="font-bold text-md mb-2">
-                  {movie.title} ({new Date(movie.release_date).getFullYear()})
-                </h2>
-                <p className="text-gray-700 mt-auto dark:text-white">
-                  Director: {movie.director?.name}
-                </p>
-                <p className="text-gray-700">Cast:</p>
-                <ul>
-                  {movie.cast?.slice(0, 3).map((actor) => (
-                    <li
-                      key={actor.cast_id}
-                      className="flex items-center space-x-2 my-1"
-                    >
-                      <img
-                        className="w-10 h-10 rounded-full object-cover"
-                        src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`}
-                        alt={actor.name}
-                      />
-                      <span>{actor.name}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            </Link>
           ))}
         </div>
         <div className="flex flex-col gap-2 max-w-sm">
