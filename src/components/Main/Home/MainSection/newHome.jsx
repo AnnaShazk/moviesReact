@@ -52,31 +52,39 @@ const newHome = () => {
 
             <div className="flex flex-wrap items-center gap-2">
               <FontAwesomeIcon icon={faStar} color="yellow" size="2x" />
-              <h3 className="text-white xxs:text-sm text-3xl mt-2 ">
+              <h3 className="text-white xxs:text-sm lg:text-2xl mt-2 ">
                 {movie.rating}/10
               </h3>
               <span className="text-4xl text-gray-500">•</span>
-              <Button className="rounded-3xl h-7 bg-white bg-opacity-20 backdrop-filter backdrop-blur-md text-white border border-white border-opacity-20 mt-2">
+              <Button className="rounded-2xl h-7 bg-white bg-opacity-20 backdrop-filter backdrop-blur-md text-white border border-white border-opacity-20 mt-2">
                 Completed
               </Button>
               <span className="text-4xl text-gray-500">•</span>
-              <h3 className="text-white text-3xl mt-2 ">{movie.year}</h3>
+              <h3 className="text-white text-2xl mt-2 ">{movie.year}</h3>
               <span className="text-4xl text-gray-500">•</span>
-              <h3 className="text-white text-3xl mt-2 ">{movie.director}</h3>
+              <h3 className="text-white text-2xl mt-2 ">{movie.director}</h3>
             </div>
-            <p className="text-white text-md max-w-md md:text-lg">
+            <p className="text-white text-md max-w-md md:text-lg lg:text-2xl">
               {movie.movie_details}
             </p>
+            <div className="flex flex-wrap gap-2">
+              <Button className="rounded-2xl h-7 bg-white bg-opacity-20 backdrop-filter backdrop-blur-md text-white border border-white border-opacity-20 mt-2">
+                Watch Now
+              </Button>
+              <Button className="rounded-2xl h-7 bg-white bg-opacity-20 backdrop-filter backdrop-blur-md text-white border border-white border-opacity-20 mt-2">
+                Add to Favourite
+              </Button>
+            </div>
             <div className="flex items">
               <Pagination
                 activeIndex={activeIndex}
                 setActiveIndex={setActiveIndex}
               />
             </div>
+            <CardMovie />
           </div>
         ))}
       </div>
-      <CardMovie />
     </>
   );
 };
