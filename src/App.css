@@ -42,3 +42,8 @@ body {
   overflow: hidden;
   z-index: 1;
 }
+
+.card-wrapper .rounded-t-lg {
+  min-height: 165px;
+  max-height: 165px;
+}
