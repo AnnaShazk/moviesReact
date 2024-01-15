@@ -25,8 +25,19 @@ const Movies = () => {
           <img src={movie.poster} alt={movie.title} />
         </div>
       ))}
+      {movies.length === 0 ? (
+        <p>No movies found</p>
+      ) : (
+        movies.map((movie) => (
+          <div
+            key={movie.id}
+            className="flex flex-col justify-center items-center gap-2 md:gap-5 p-2 px-5 md:px-16 dark:bg-black"
+          >
+            {movie.title}
+          </div>
+        ))
+      )}
     </div>
-    
   );
 };
 

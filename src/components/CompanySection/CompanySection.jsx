@@ -82,7 +82,7 @@ function CompanySection(darkMode) {
           : productionHouseList
         ).map((item) => (
           <div
-            className="border-[2px] rounded-lg hover:scale-110 transition-all duration-300 ease-in-out cursor-pointer relative shadow-xl"
+            className="border-[2px] rounded-lg hover:scale-110 transition-all duration-300 ease-in-out cursor-pointer relative shadow-xl w-full object-contain h-full  opacity-100 2xl:w-auto 2xl:h-auto"
             key={item.id}
           >
             <video
@@ -93,7 +93,10 @@ function CompanySection(darkMode) {
               muted
               className="absolute z-0 top-0 rounded-md opacity-0 hover:opacity-50"
             />
-            <img src={item.image} className="w-full z-[1] opacity-100" />
+            <img
+              src={item.image}
+              className="w-full object-contain h-full z-[1] opacity-100 2xl:w-auto 2xl:h-auto"
+            />
           </div>
         ))}
       </div>
