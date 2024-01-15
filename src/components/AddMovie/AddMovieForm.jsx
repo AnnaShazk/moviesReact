@@ -57,7 +57,7 @@ const AddMovieForm = () => {
           setIsOpen(true);
           setIsSubmitted(false);
         }}
-        className="p-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+        className="p-2 bg-gradient-to-r from-purple-700 to-black-200 text-white rounded hover:from-black-500 hover:to-purple-600 transition-all duration-200"
       >
         Add Movie
       </button>
