@@ -26,21 +26,27 @@ const CardMovie = () => {
   return (
     <div className="flex overflow-x-auto py-5 gap-4">
       {movieDetails.map((movie) => (
-        <div
-          className="flex-none w-60 shrink-0 bg-white rounded-lg shadow-md"
-          key={movie.id}
-        >
-          <img src={movie?.poster} alt={movie.title} className="rounded-t-lg" />
-          <div className="p-4">
-            <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-              {movie.title}
-            </h5>
-            <div className="flex justify-between items-center mt-4">
-              <AddToFavourites movie={movie} />
-              <DeleteMovie id={movie.id} setMovieDetails={setMovieDetails} />
+        <Link to={`/movies/${movie.id}`}>
+          <div
+            className="flex-none w-60 shrink-0 bg-white rounded-lg shadow-md"
+            key={movie.id}
+          >
+            <img
+              src={movie?.poster}
+              alt={movie.title}
+              className="rounded-t-lg"
+            />
+            <div className="p-4">
+              <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                {movie.title}
+              </h5>
+              <div className="flex justify-between items-center mt-4">
+                <AddToFavourites movie={movie} />
+                <DeleteMovie id={movie.id} setMovieDetails={setMovieDetails} />
+              </div>
             </div>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );
