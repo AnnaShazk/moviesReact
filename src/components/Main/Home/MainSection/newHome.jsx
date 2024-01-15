@@ -36,15 +36,15 @@ const newHome = () => {
   }, []);
   return (
     <>
-      <div
-        className="flex flex-col items-start justify-center p-4 md:p-8 min-h-screen"
-        style={{
-          backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${fetchMovies[0]?.poster})`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-        }}
-      >
-        {fetchMovies.slice(activeIndex, activeIndex + 1).map((movie) => (
+      {fetchMovies.slice(activeIndex, activeIndex + 1).map((movie) => (
+        <div
+          className="flex flex-col items-start justify-center p-4 md:p-8 min-h-screen"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(${movie.poster})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+          }}
+        >
           <div className="max-w-90 xxs:max-w-full sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl">
             <h2 className="text-white text-xl  sm:text-2xl  md:text-4xl lg:text-7xl">
               {movie.title}
@@ -72,7 +72,7 @@ const newHome = () => {
                 Watch Now
               </Button>
               <Button className="rounded-2xl h-7 bg-white bg-opacity-20 backdrop-filter backdrop-blur-md text-white border border-white border-opacity-20 mt-2">
-                Add to Favourite
+                Add to Favourites
               </Button>
               <Button className="rounded-2xl h-7 bg-white bg-opacity-20 backdrop-filter backdrop-blur-md text-white border border-white border-opacity-20 mt-2">
                 Delete the Movie
@@ -86,8 +86,8 @@ const newHome = () => {
             </div>
             <CardMovie />
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </>
   );
 };

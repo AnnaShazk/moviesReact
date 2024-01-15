@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 const AddToFavourites = ({ movie }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -29,9 +31,9 @@ const AddToFavourites = ({ movie }) => {
     <>
       <button
         onClick={addToFavourites}
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-1 rounded"
+        className="hover:bg-black-700 text-red font-bold py-1 px-1 rounded"
       >
-        Add to Favourites
+        <FontAwesomeIcon icon={faHeart} className="text-red-500" />
       </button>
       {isModalOpen && (
         <div
