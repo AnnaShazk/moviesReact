@@ -37,7 +37,13 @@ const CardMovie = () => {
           className="card flex-none w-60 shrink-0 bg-white rounded-lg shadow-md dark:bg-gray-700"
           key={movie.id}
         >
-          <img src={movie?.poster} alt={movie.title} className="rounded-t-lg" />
+          <Link to={`/movies/${movie.id}`}>
+            <img
+              src={movie?.poster}
+              alt={movie.title}
+              className="rounded-t-lg"
+            />
+          </Link>
           <div className="p-4">
             <h5 className="text-xl font-bold tracking-tight text-gray-900 text-center  dark:text-white">
               {movie.title}
