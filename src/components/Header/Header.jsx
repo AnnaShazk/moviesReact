@@ -25,7 +25,7 @@ const Header = ({ toggleCiaranMode, darkMode, fetchMoviesData }) => {
       <Navbar.Collapse>
         <div className="flex items-center  gap-6">
           <SearchBar fetchMoviesData={fetchMoviesData} />
-          <NavLink to="#">Movies</NavLink>
+          <NavLink to="/movies">Movies</NavLink>
           <NavLink to="#">WishList</NavLink>
           <NavLink to="#">About</NavLink>
           <Link to="/publicmovies">Public Movies</Link>
