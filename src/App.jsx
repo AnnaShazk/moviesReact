@@ -13,7 +13,7 @@ function App() {
   const [fetchMoviesData, setfetchMoviesData] = useState([]);
 
   useEffect(() => {
-    const fetchMoviesData = async () => {
+    const fetchMovies = async () => {
       try {
         const response = await axios.get(
           `${import.meta.env.VITE_APP_URL}/api/movies`
@@ -24,12 +24,13 @@ function App() {
       }
     };
 
-    fetchMoviesData();
+    fetchMovies();
   }, []);
 
   const toggleCiaranMode = () => {
     setDarkMode(!darkMode);
   };
+
   return (
     <>
       <div className={`flex flex-col min-h-screen ${darkMode ? "dark" : ""}`}>
