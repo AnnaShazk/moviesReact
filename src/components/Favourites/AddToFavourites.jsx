@@ -33,7 +33,11 @@ const AddToFavourites = ({ movie }) => {
         onClick={addToFavourites}
         className="hover:bg-black-700 text-red font-bold py-1 px-1 rounded"
       >
-        <FontAwesomeIcon icon={faHeart} className="text-red-500" />
+        <FontAwesomeIcon
+          icon={faHeart}
+          className="text-emerald-500 "
+          size="2x"
+        />
       </button>
       {isModalOpen && (
         <div

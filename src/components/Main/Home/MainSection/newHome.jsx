@@ -71,12 +71,6 @@ const newHome = () => {
               <Button className="rounded-2xl h-7 bg-white bg-opacity-20 backdrop-filter backdrop-blur-md text-white border border-white border-opacity-20 mt-2">
                 Watch Now
               </Button>
-              <Button className="rounded-2xl h-7 bg-white bg-opacity-20 backdrop-filter backdrop-blur-md text-white border border-white border-opacity-20 mt-2">
-                Add to Favourites
-              </Button>
-              <Button className="rounded-2xl h-7 bg-white bg-opacity-20 backdrop-filter backdrop-blur-md text-white border border-white border-opacity-20 mt-2">
-                Delete the Movie
-              </Button>
             </div>
             <div className="flex items">
               <Pagination

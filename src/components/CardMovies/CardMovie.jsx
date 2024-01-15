@@ -4,6 +4,13 @@ import { Card } from "flowbite-react";
 import AddToFavourites from "../Favourites/AddToFavourites";
 import { Link } from "react-router-dom";
 import DeleteMovie from "../DeleteMovie/DeleteMovie";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faComment,
+  faHeart,
+  faShare,
+  faTrash,
+} from "@fortawesome/free-solid-svg-icons";
 
 const CardMovie = () => {
   const [movieDetails, setMovieDetails] = useState([]);
@@ -24,21 +31,28 @@ const CardMovie = () => {
   }, []);
 
   return (
-    <div className="flex overflow-x-auto py-5 gap-4">
+    <div className="flex overflow-x-auto py-5 gap-4 card-wrapper ">
       {movieDetails.map((movie) => (
         <div
-          className="flex-none w-60 shrink-0 bg-white rounded-lg shadow-md"
+          className="card flex-none w-60 shrink-0 bg-white rounded-lg shadow-md dark:bg-gray-700"
           key={movie.id}
         >
           <img src={movie?.poster} alt={movie.title} className="rounded-t-lg" />
           <div className="p-4">
-            <h5 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <h5 className="text-xl font-bold tracking-tight text-gray-900 text-center  dark:text-white">
               {movie.title}
             </h5>
-            <div className="flex justify-between items-center mt-4">
-              <AddToFavourites movie={movie} />
-              <DeleteMovie id={movie.id} setMovieDetails={setMovieDetails} />
-            </div>
+          </div>
+          <div className="card-toolbar flex flex-col gap-10 absolute top-0 right-0 w-0 h-full bg-white bg-opacity-75 items-center justify-center transition-width duration-200">
+            <AddToFavourites movie={movie} />
+
+            <FontAwesomeIcon
+              className=" cursor-pointer"
+              icon={faComment}
+              color="white"
+            />
+
+            <DeleteMovie id={movie.id} setMovieDetails={setMovieDetails} />
           </div>
         </div>
       ))}

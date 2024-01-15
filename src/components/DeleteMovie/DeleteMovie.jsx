@@ -21,10 +21,10 @@ const DeleteMovie = ({ id, setMovieDetails }) => {
   return (
     <>
       <button
-        className="ml-2 bg-red-500 hover:bg-red-700 text-black font-bold py-1 px-1 rounded"
+        className="   text-black font-bold  rounded"
         onClick={() => setIsModalOpen(true)}
       >
-        <FontAwesomeIcon icon={faTrash} />
+        <FontAwesomeIcon icon={faTrash} size="2x" className="text-red-500 " />
       </button>
       {isModalOpen && (
         <div
