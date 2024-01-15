@@ -40,12 +40,10 @@ function App() {
           fetchMoviesData={fetchMoviesData}
         />
         <div className="">
-          <div className="col-span-4">
-            <Main fetchMoviesData={fetchMoviesData} />
-          </div>
-          {/*             <PopularMoviesSection />
-           */}{" "}
+          <Main fetchMoviesData={fetchMoviesData} />
         </div>
+        {/*             <PopularMoviesSection />
+         */}{" "}
         <CompanySection darkMod={darkMode} />
         <FooterComponent />
       </div>

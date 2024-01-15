@@ -56,14 +56,14 @@ const Home = () => {
               }}
             >
               <div className="flex ">
-                <div className="flex flex-col gap-4  max-w-s p-4 ">
+                <div className="flex flex-col gap-4  max-w-l p-4 ">
                   <h1 className="text-4xl bottom-0  font-bold text-white ">
                     {movie.title}
                   </h1>
-                  <div className="flex  items-center gap-5 ">
+                  <div className="flex  items-center gap-1 ">
                     <FontAwesomeIcon icon={faStar} color="yellow" />
                     <h3 className="text-white font-semibold  mt-1">
-                      {movie.rating}
+                      {movie.rating}/5
                     </h3>
                     <Button className="rounded-3xl h-7 bg-emerald-600">
                       Completed

@@ -7,6 +7,7 @@ import MovieDetails from "../Home/MainSection/MovieDetails";
 import NotFound from "../../NotFound/NotFound";
 import PublicMovies from "../../PublicMovies/PublicMovies";
 import PublicMoviesDetails from "../../PublicMovies/PublicMoviesDetails";
+import NewHome from "./MainSection/newHome";
 
 const Main = () => {
   return (
