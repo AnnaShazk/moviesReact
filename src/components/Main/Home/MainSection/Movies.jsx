@@ -45,9 +45,6 @@ const Movies = () => {
                   <p className="text-gray-700 dark:text-white text-base">
                     {movie.year}
                   </p>
-                  <p className="text-gray-700 dark:text-white text-base">
-                    {movie.movie_details}
-                  </p>
                 </div>
               </Link>
             </div>
