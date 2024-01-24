@@ -30,4 +30,4 @@ This React Movie App allows users to discover, add, favorite, delete movies, and
 - **pg-promise:** A PostgreSQL promise-based library for interacting with a database.
 
 ## Example
-Visit the [React Movie App][[an_awesome_website_link](https://main--zingy-kangaroo-29840f.netlify.app/)https://main--zingy-kangaroo-29840f.netlify.app/] to explore the application.
+Visit the [React Movie App](https://main--zingy-kangaroo-29840f.netlify.app/) to explore the application.
