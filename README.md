@@ -1,8 +1,30 @@
-# React + Vite
+# React Movie App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This React Movie App allows users to discover, add, favorite, delete movies, and search through both locally added movies and a public movie API.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. **Add Your Own Movie:**
+   - Users can add their own movies to the app by providing details such as title, director, year, rating, poster, and movie details.
+
+2. **Favorite Movies:**
+   - Users can mark movies as favorites for quick access.
+
+3. **Delete Movies:**
+   - Users can delete movies, removing them from the app.
+
+4. **Search Locally:**
+   - The app provides a search functionality to find movies locally added by the user.
+
+5. **Search Public API:**
+   - Users can search and discover movies from a public movie API, enhancing the movie collection.
+
+## Tech Stack
+
+- **React:** A JavaScript library for building user interfaces.
+- **React Router:** For handling navigation within the React application.
+- **Vite:** A fast React development build tool.
+- **Tailwind CSS:** A utility-first CSS framework for styling the app.
+- **FontAwesome:** For adding scalable vector icons to the app.
+- **Axios:** A promise-based HTTP client for making API requests.
+- **pg-promise:** A PostgreSQL promise-based library for interacting with a database.
