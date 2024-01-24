@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button, Sidebar } from "flowbite-react";
-import Header from "./components/Header/header";
+import Header from "./components/Header/Header";
 import Main from "./components/Main/Home/Main";
 import FooterComponent from "./components/Footer/FooterComponent";
 import "./App.css";
